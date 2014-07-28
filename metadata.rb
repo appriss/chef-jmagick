@@ -8,7 +8,10 @@ version          '0.1.0'
 
 recipe "jmagick", "Installs the JMagick library."
 
+
+depends "java"
 depends "imagemagick"
 depends "build-essential"
+depends "ark"
 
 
