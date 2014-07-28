@@ -11,7 +11,7 @@ include_recipe "build-essential"
 include_recipe "java"
 
 execute "Test Java Version" do
-	command ". /etc/profile; java -version >/tmp/version.out"
+	command ". /etc/profile; java -version >/tmp/version.out 2>&1"
 end
 
 
