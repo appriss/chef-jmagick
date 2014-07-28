@@ -10,8 +10,11 @@ include_recipe "build-essential"
 
 include_recipe "java"
 
-execute "Test Java Version" do
-	command "java -version >/tmp/version.out 2>&1"
+ark "jmagick" do
+	url node['jmagick']['url']
+	version node['jmagick']['version']
+	action :install_with_make
 end
+
 
 
