@@ -16,5 +16,9 @@ ark "jmagick" do
 	action :install_with_make
 end
 
+execute "output arch" do
+	command "echo #{node['arch']} >/tmp/arch.out"
+end
+
 
 
