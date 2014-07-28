@@ -17,7 +17,7 @@ ark "jmagick" do
 end
 
 execute "output arch" do
-	command "echo #{node['arch']} >/tmp/arch.out"
+	command "echo #{node['platform']} >/tmp/arch.out"
 end
 
 
