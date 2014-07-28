@@ -14,11 +14,12 @@ ark "jmagick" do
 	url node['jmagick']['url']
 	version node['jmagick']['version']
 	action :install_with_make
+	#Clients that have a /usr/local/lib64 dir should be 64-bit; otherwise fallback to /usr/local/lib
+	if File.directory?("/usr/local/lib64")
+		autoconf_opts ['--libdir=/usr/local/lib64']
+	end
 end
 
-execute "output arch" do
-	command "echo #{node['platform']} >/tmp/arch.out"
-end
 
 
 
